@@ -1,0 +1,20 @@
+describe('CMS Login', () => {
+    it('login supervisor', () => {
+      cy.visit('https://staging-pos-cms.devfullteam.tech/login')
+      cy.get('#email').type('suleemas.fua+123@fullteam.tech')
+      cy.get('#password').type('Bg123456')
+      cy.get('.btn').click()
+      // cy.wait(5000)
+      cy.get('.megamenu_toggle').click()
+      cy.get('[class="col-md-9"]').contains('ying01_outlet').click()
+      cy.get('.float-right > :nth-child(2)').click()
+      cy.get('.navbar-btn > .btn-toggle-offcanvas > .lnr').click()
+      cy.wait(5000)
+      cy.contains('POS ทั้งหมด').click()
+      cy.get('[class="btn btn-sm btn-success"]').click()
+      cy.get('.navbar-brand > .btn-toggle-offcanvas > .lnr').click()
+      cy.get('#outletId').contains('เลือกสาขา').click()
+      cy.contains(ying01_outlet).click()
+     })
+  
+    })
